@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap');
+:root{--green:#246b45;--light:#edf7ef;--ink:#1d2b23;--muted:#738078;--line:#e5ece6}
+*{box-sizing:border-box}body{margin:0;background:#f8faf8;color:var(--ink);font-family:'DM Sans',sans-serif}
+.navbar{display:flex;align-items:center;justify-content:space-between;padding:18px 6%;background:white;border-bottom:1px solid var(--line);gap:20px;flex-wrap:wrap}
+.brand{font:800 24px Manrope;color:var(--green);text-decoration:none}.navbar nav{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+a{color:var(--green);text-decoration:none}.navbar nav a{font-weight:600;color:#435248}.hello{color:var(--muted);font-size:14px}
+.container{max-width:1150px;margin:32px auto;padding:0 22px;min-height:70vh}
+.hero{background:linear-gradient(110deg,#e9f5e9,#f5f8e9);border-radius:24px;padding:40px 48px;display:flex;justify-content:space-between;align-items:center;overflow:hidden}
+.hero h1{font:800 clamp(36px,5vw,58px) Manrope;line-height:1.08;margin:8px 0}.hero h1 span{color:var(--green)}.hero p{color:#5d6e61}.eyebrow{font-size:12px;letter-spacing:2px;font-weight:700;color:var(--green)!important}.hero-art{font-size:clamp(42px,7vw,85px);letter-spacing:-12px}
+.searchbar{display:flex;gap:10px;margin:28px 0;flex-wrap:wrap}.searchbar input{flex:1;min-width:180px}.searchbar select{min-width:160px}
+input,select,textarea{width:100%;padding:12px 14px;border:1px solid #dce5dd;border-radius:10px;background:white;font:inherit;color:var(--ink)}
+button,.button{background:var(--green);color:white;border:0;border-radius:10px;padding:12px 18px;font:700 14px 'DM Sans';cursor:pointer;display:inline-block;text-align:center}
+button:hover,.button:hover{background:#195535;color:white}.nav-button{background:var(--light);padding:10px 14px;border-radius:9px}
+h1,h2{font-family:Manrope}h2{margin-top:32px}.products{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px}
+.product{background:white;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 5px 18px #243d2910}
+.product-emoji{background:#f2f7ef;border-radius:13px;height:125px;display:grid;place-items:center;font-size:62px;margin-bottom:14px}
+.product h3{margin:10px 0}.tag{display:inline-block;background:#eaf5eb;color:var(--green);border-radius:20px;padding:5px 10px;font-size:12px;font-weight:700}
+.price{font-weight:800;font-size:19px;margin:12px 0}.price small{font-size:12px;color:var(--muted);font-weight:500}.stock,.muted{color:var(--muted);font-size:13px}.full{width:100%;margin-top:10px}
+.flash{background:#e9f6eb;color:#245d3b;padding:12px 16px;border-radius:10px;margin-bottom:18px}
+.form-card,.admin-card{background:white;border:1px solid var(--line);border-radius:18px;padding:28px;max-width:460px;margin:30px auto;box-shadow:0 8px 28px #243d2909}
+.form-card.wide{max-width:650px}.form-card h1{margin-top:0}.form-card form{display:grid;gap:10px}.form-card label{font-weight:700;font-size:14px;margin-top:8px}.form-card p{color:var(--muted)}.demo{background:#f5f8f5;padding:12px;border-radius:10px;font-size:13px;margin-top:16px}
+.table-wrap{overflow-x:auto;background:white;border:1px solid var(--line);border-radius:14px;margin:18px 0}table{border-collapse:collapse;width:100%;min-width:650px}th,td{text-align:left;padding:14px;border-bottom:1px solid var(--line)}th{background:#f1f7f1;color:var(--green);font-size:13px}tr:last-child td{border-bottom:0}.qty-form{display:flex;gap:7px}.qty-form input{width:70px;padding:8px}.qty-form button{padding:8px 12px}.total{text-align:right;font-size:24px;font-weight:800;margin:20px 0}.empty{text-align:center;padding:40px;background:white;border-radius:15px}
+.admin-card{max-width:none;margin:20px 0}.admin-form{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}.danger{background:#b83c3c;padding:8px 12px}
+footer{text-align:center;padding:25px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);background:white}
+@media(max-width:650px){.hero{padding:28px;}.hero-art{display:none}.navbar{padding:15px 5%}.navbar nav{gap:12px}.container{margin:22px auto;padding:0 15px}}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Shop | FreshMart{% endblock %}
+{% block content %}
+<section class="hero">
+  <div><p class="eyebrow">FRESH • DAILY • LOCAL</p><h1>Good food.<br><span>Good mood.</span></h1>
+  <p>Everyday groceries made easy.</p></div><div class="hero-art">🥦 🍎 🥕</div>
+</section>
+<form class="searchbar" method="get">
+  <input name="q" value="{{ q }}" placeholder="Search groceries...">
+  <select name="category"><option value="">All categories</option>
+    {% for c in categories %}<option value="{{ c.category }}" {% if selected==c.category %}selected{% endif %}>{{ c.category }}</option>{% endfor %}
+  </select>
+  <button>Search</button>
+</form>
+<h2>Our groceries</h2>
+<div class="products">
+{% for p in products %}
+  <article class="product">
+    <div class="product-emoji">{{ p.emoji }}</div>
+    <span class="tag">{{ p.category }}</span>
+    <h3>{{ p.name }}</h3>
+    <p class="price">₹{{ "%.2f"|format(p.price) }} <small>/ {{ p.unit }}</small></p>
+    <p class="stock">{{ p.stock }} in stock</p>
+    <form method="post" action="{{ url_for('add_to_cart',product_id=p.id) }}"><button class="full">Add to cart +</button></form>
+  </article>
+{% else %}<p>No products found. Try another search.</p>{% endfor %}
+</div>
+{% endblock %}

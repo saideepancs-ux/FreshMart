@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block title %}My Orders | FreshMart{% endblock %}
+{% block content %}<h1>My orders</h1>
+{% if orders %}<div class="table-wrap"><table><tr><th>Order</th><th>Date</th><th>Delivery address</th><th>Total</th><th>Status</th></tr>
+{% for o in orders %}<tr><td>#{{ o.id }}</td><td>{{ o.created_at }}</td><td>{{ o.address }}</td><td>₹{{ "%.2f"|format(o.total) }}</td><td><span class="tag">{{ o.status }}</span></td></tr>{% endfor %}
+</table></div>{% else %}<p>No orders yet. Start shopping!</p><a class="button" href="{{ url_for('index') }}">Shop now</a>{% endif %}{% endblock %}

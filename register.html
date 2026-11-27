@@ -1,0 +1,8 @@
+{% extends "base.html" %}{% block title %}Register | FreshMart{% endblock %}
+{% block content %}<section class="form-card"><h1>Create account</h1><p>Join FreshMart to shop groceries.</p>
+<form method="post">
+<label>Full name</label><input name="name" required>
+<label>Email</label><input type="email" name="email" required>
+<label>Password (minimum 6 characters)</label><input type="password" name="password" minlength="6" required>
+<button class="full">Register</button>
+</form><p>Already registered? <a href="{{ url_for('login') }}">Login</a></p></section>{% endblock %}

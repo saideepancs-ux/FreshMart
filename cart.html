@@ -1,0 +1,13 @@
+{% extends "base.html" %}{% block title %}Cart | FreshMart{% endblock %}
+{% block content %}<h1>Your shopping cart</h1>
+{% if items %}
+<div class="table-wrap"><table><tr><th>Product</th><th>Price</th><th>Quantity</th><th>Subtotal</th></tr>
+{% for item in items %}<tr><td>{{ item.product.emoji }} {{ item.product.name }}</td><td>₹{{ "%.2f"|format(item.product.price) }}</td>
+<td><form class="qty-form" method="post" action="{{ url_for('update_cart',product_id=item.product.id) }}">
+<input type="number" name="quantity" min="0" max="{{ item.product.stock }}" value="{{ item.qty }}"><button>Update</button></form></td>
+<td>₹{{ "%.2f"|format(item.subtotal) }}</td></tr>{% endfor %}
+</table></div>
+<div class="total">Total: ₹{{ "%.2f"|format(total) }}</div><a class="button" href="{{ url_for('checkout') }}">Proceed to checkout</a>
+<p class="muted">Set quantity to 0 and press Update to remove an item.</p>
+{% else %}<div class="empty"><p>Your cart is empty.</p><a class="button" href="{{ url_for('index') }}">Start shopping</a></div>{% endif %}
+{% endblock %}
